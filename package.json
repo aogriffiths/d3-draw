@@ -1,0 +1,21 @@
+{
+  "name": "d3-draw",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.6",
+    "jade": "*"
+  },
+  "jam": {
+    "packageDir": "public/javascripts/jam",
+    "baseUrl": "public/javascripts",
+    "dependencies": {
+      "jquery": "*",
+      "underscore": "*",
+      "d3":"*"
+    }
+  }
+}
