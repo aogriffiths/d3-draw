@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>D3Draw QUnit Tests (Browser Global)</title>
+  <link rel="stylesheet" href="resources/qunit.css">
+  <!-- USING BROWSER GLOBALS
+    -- All the required dependancies are added here as global scripts
+    -->
+  <script type="text/javascript" src="../javascripts/jam/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../javascripts/jam/underscore/underscore.js"></script>
+  <script type="text/javascript" src="../javascripts/jam/backbone/backbone.js"></script>
+  <script type="text/javascript" src="../javascripts/jam/bootstrap/docs/assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../javascripts/jsonml/jsonml-xml.js"></script>
+  <script type="text/javascript" src="../javascripts/jam/d3/d3.v2.js"></script>
+  <script type="text/javascript" src="../javascripts/d3draw.js"></script>
+  <!-- Finally, QUnit, which works best as a browser global -->
+  <script type="text/javascript" src="resources/qunit.js"></script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="tests.js"></script>
+</body>
+</html>

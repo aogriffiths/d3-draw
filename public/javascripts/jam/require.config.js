@@ -1,6 +1,15 @@
 var jam = {
     "packages": [
         {
+            "name": "backbone",
+            "location": "jam/backbone",
+            "main": "backbone.js"
+        },
+        {
+            "name": "bootstrap",
+            "location": "jam/bootstrap"
+        },
+        {
             "name": "d3",
             "location": "jam/d3",
             "main": "d3.v2.js"
@@ -18,6 +27,13 @@ var jam = {
     ],
     "version": "0.2.13",
     "shim": {
+        "backbone": {
+            "deps": [
+                "underscore",
+                "jquery"
+            ],
+            "exports": "Backbone"
+        },
         "d3": {
             "exports": "d3"
         },
@@ -31,6 +47,15 @@ if (typeof require !== "undefined" && require.config) {
     require.config({
     "packages": [
         {
+            "name": "backbone",
+            "location": "jam/backbone",
+            "main": "backbone.js"
+        },
+        {
+            "name": "bootstrap",
+            "location": "jam/bootstrap"
+        },
+        {
             "name": "d3",
             "location": "jam/d3",
             "main": "d3.v2.js"
@@ -47,6 +72,13 @@ if (typeof require !== "undefined" && require.config) {
         }
     ],
     "shim": {
+        "backbone": {
+            "deps": [
+                "underscore",
+                "jquery"
+            ],
+            "exports": "Backbone"
+        },
         "d3": {
             "exports": "d3"
         },
@@ -60,6 +92,15 @@ else {
     var require = {
     "packages": [
         {
+            "name": "backbone",
+            "location": "jam/backbone",
+            "main": "backbone.js"
+        },
+        {
+            "name": "bootstrap",
+            "location": "jam/bootstrap"
+        },
+        {
             "name": "d3",
             "location": "jam/d3",
             "main": "d3.v2.js"
@@ -76,6 +117,13 @@ else {
         }
     ],
     "shim": {
+        "backbone": {
+            "deps": [
+                "underscore",
+                "jquery"
+            ],
+            "exports": "Backbone"
+        },
         "d3": {
             "exports": "d3"
         },

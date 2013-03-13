@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>D3Draw QUnit Tests (RequireJS)</title>
+  <link rel="stylesheet" href="resources/qunit.css">
+  <!-- USING REQUIRE.JS
+    -- Instead of including all the required libraries here just include require.js
+    -- and, if you have your require.js environment set up correctly, the module definitions
+    -- will ensure all the required dependancies are loaded when needed.
+    -->
+  <script data-main="main" type="text/javascript" src="../javascripts/jam/require.js"></script>
+  <!-- Finally, QUnit, which works best as a browser global -->
+  <script type="text/javascript" src="resources/qunit.js"></script>
+  <!--
+  <script type="text/javascript">
+    window.addEventListener("load", function onLoad() {
+      QUnit.config.autostart = false;
+      // Without this setTimeout, the specs don't always get execute in webKit browsers
+      setTimeout(function () {
+        //load tests using require
+        require(['./tests'], function (one) {
+          //now trigger them.
+          QUnit.start();
+        });
+        
+      }, 10);
+      window.removeEventListener("load", onLoad, true);
+    }, true);
+  </script>  
+  
+  -->
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+</body>
+</html>

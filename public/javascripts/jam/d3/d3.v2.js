@@ -1607,11 +1607,17 @@
   };
   d3_selectionPrototype.insert = function(name, before) {
     name = d3.ns.qualify(name);
+    var referenceElement;
+    if(typeof before === "object"){
+      referenceElement = before;
+    }else{
+      referenceElement = d3_select(before, this);
+    }
     function insert() {
-      return this.insertBefore(document.createElementNS(this.namespaceURI, name), d3_select(before, this));
+      return this.insertBefore(document.createElementNS(this.namespaceURI, name), referenceElement);
     }
     function insertNS() {
-      return this.insertBefore(document.createElementNS(name.space, name.local), d3_select(before, this));
+      return this.insertBefore(document.createElementNS(name.space, name.local), referenceElement);
     }
     return this.select(name.local ? insertNS : insert);
   };

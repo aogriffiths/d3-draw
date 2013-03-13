@@ -3,8 +3,50 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/javascripts/jam/bootstrap/docs/assets/css/bootstrap.css')
+    link(rel='stylesheet', href='/javascripts/jam/bootstrap/docs/assets/css/bootstrap-responsive.css')
     script(src='javascripts/jam/require.js', data-main='javascripts/main')
+    script(src='javascripts/jam/bootstrap/docs/assets/js/jquery.js')
+    script(src='javascripts/jam/bootstrap/docs/assets/js/bootstrap.min.js')
 
   body
     block content
+    div#ui
+      div#menuitems.btn-toolbar(style='margin: 0;')
     svg
+    
+    script(type='text/template', id='menuitem-template')
+      div.btn-group
+        button.btn.action <%- name %>
+        |<% if(tool.config) { %>
+        button.btn.dropdown-toggle(data-toggle="dropdown")
+          span.caret
+        ul.dropdown-menu
+        |<% } %>
+
+  
+    script(type='text/template', id='menuitem-configitem-COMMAND-template')
+      li
+        a.configaction <%- name %>
+
+    script(type='text/template', id='menuitem-configitem-OPTION-OLD-template')
+      li
+        a.configaction<%- name %> 
+          select.configaction.input-small
+            |<% config.values.forEach(function(value){ %>
+            option <%- value %>
+            |<% }) %>
+            
+    script(type='text/template', id='menuitem-configitem-OPTION-template')
+      li
+        div(style="padding: 3px 20px;") <%- name %> 
+          form
+            |<% config.values.forEach(function(value){ %>
+            label.radio
+              input.configaction(type="radio", name="optionsRadios", value!="<%- value %>", checked="")
+              |<%- value %>
+            |<% }) %>
+
+    script(type='text/template', id='menuitem-configitem-NUMBER-template')
+      li
+        text.configaction(type='number') 0
